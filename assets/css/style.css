@@ -9,6 +9,57 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#contenedor_carga {
+  background-color: rgba(215, 33, 33, 0.1);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 100000000;
+}
+
+#carga {
+  border: 15px solid #ccc;
+  border-top-color: #af342b;
+  border-top-style: groove;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  -webkit-animation: girar 1.5s linear infinite;
+  -o-animation: girar 1.5s linear infinite;
+  animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -32,7 +83,8 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
 }
-#loader {
+
+/* #loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -47,7 +99,7 @@ h6 {
 
 #loader.hidden {
   display: none;
-}
+} */
 
 body {
   overflow: hidden;
@@ -107,25 +159,28 @@ body {
   margin: 15px auto;
   display: block;
   width: 120px;
-  height: 120px; /* Asegura que el alto sea igual al ancho */
+  height: 120px;
+  /* Asegura que el alto sea igual al ancho */
 
   transform-origin: center center;
-  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+  transition: transform 0.3s ease-in-out;
+  /* Agrega una transición suave */
 }
 
 #header .profile img:hover {
-  transform: scale(
-    1.2
-  ); /* Aplica un zoom del 20% a la imagen al pasar el cursor sobre ella */
+  transform: scale(1.2);
+  /* Aplica un zoom del 20% a la imagen al pasar el cursor sobre ella */
 }
 
 .xd {
   color: rgb(153, 79, 226);
   text-shadow: 2px 2px 4px hsl(206, 6%, 21%);
 }
+
 .dev {
   color: rebeccapurple;
 }
+
 .abi {
   color: rgb(50, 242, 245);
 }
@@ -207,7 +262,7 @@ body {
   list-style: none;
 }
 
-.nav-menu > ul > li {
+.nav-menu>ul>li {
   position: relative;
   white-space: nowrap;
 }
@@ -233,7 +288,7 @@ body {
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
-.nav-menu li:hover > a {
+.nav-menu li:hover>a {
   text-decoration: none;
   color: #fff;
 }
@@ -241,7 +296,7 @@ body {
 .nav-menu a:hover i,
 .nav-menu .active i,
 .nav-menu .active:focus i,
-.nav-menu li:hover > a i {
+.nav-menu li:hover>a i {
   color: #149ddd;
 }
 
@@ -338,8 +393,10 @@ body {
     height: 100vh;
     background: url("../img/techos\ portada\ 4jpg.jpg") no-repeat;
     background-size: cover;
-    background-position: -200px 0; /* Mueve la imagen 40px hacia la derecha */
+    background-position: -200px 0;
+    /* Mueve la imagen 40px hacia la derecha */
   }
+
   #hero h1 {
     font-size: 40px;
     line-height: 36px;
@@ -660,7 +717,7 @@ section {
   background: rgba(20, 157, 221, 0.95);
 }
 
-.portfolio .portfolio-wrap .portfolio-links a + a {
+.portfolio .portfolio-wrap .portfolio-links a+a {
   border-left: 1px solid #37b3ed;
 }
 
@@ -693,10 +750,7 @@ section {
   position: relative;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -704,10 +758,7 @@ section {
   border: 1px solid #149ddd;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #149ddd;
 }
 
@@ -730,7 +781,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -1001,7 +1052,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1101,11 +1152,11 @@ section {
   font-size: 15px;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #0e2442;
